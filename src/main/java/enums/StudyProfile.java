@@ -1,3 +1,5 @@
+package enums;
+
 public enum StudyProfile {
     MEDICINE ("Медицина"),
     LOGISTICS ("Логистика"),
@@ -8,5 +10,9 @@ public enum StudyProfile {
 
     StudyProfile(String s) {
         this.profileName = s;
+    }
+
+    public String getProfileName() {
+        return profileName;
     }
 }
