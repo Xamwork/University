@@ -1,4 +1,4 @@
-public class Student {
+public class Student  {
     String fullName;
     String universityId;
     int currentCourseNumber;
@@ -12,11 +12,9 @@ public class Student {
         return universityId;
     }
 
-
     public int getCurrentCourseNumber() {
         return currentCourseNumber;
     }
-
 
     public float getAvgExamScore() {
         return avgExamScore;
