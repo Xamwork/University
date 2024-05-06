@@ -7,6 +7,7 @@ public enum StudyProfile {
     JURISPRUDENCE("Юриспруденция"),
     MEDICINE("Медицина"),
     LINGUISTICS("Лингвистика");
+
     private String profileName;
 
     StudyProfile(String s) {
