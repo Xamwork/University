@@ -5,6 +5,7 @@ import models.Student;
 import models.University;
 import studentComparators.StudentComparator;
 import universityComparators.UniversityComparator;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.LogManager;
@@ -17,10 +18,10 @@ public class Main {
     private static final Logger logger = Logger.getLogger(Main.class.getName());
 
 
-    public static void main(String[] args) throws IOException  {
+    public static void main(String[] args) throws IOException {
 
         try {
-            LogManager.getLogManager().readConfiguration(Main.class.getResourceAsStream("src/main/java/logging.properties"));
+            LogManager.getLogManager().readConfiguration(Main.class.getResourceAsStream("logging.properties"));
         } catch (IOException e) {
             System.err.println("Could not setup logger configuration: " + e.toString());
         }
@@ -28,7 +29,7 @@ public class Main {
         logger.log(INFO, "Application started, Logger configured");
 
         List<University> universities =
-                io.XlsReader.readXlsUniversities("/java/universityInfo.xlsx");
+                io.XlsReader.readXlsUniversities("src/main/java/universityInfo.xlsx");
         UniversityComparator universityComparator =
                 UnitedComparator.getUniversityComparator(UniversityVariantsComparator.UNIVERSITY_YEAR_OF_FOUNDATION);
         universities.sort(universityComparator);
@@ -48,7 +49,7 @@ public class Main {
         });
 
         List<Student> students =
-                io.XlsReader.readXlsStudents("/java/universityInfo.xlsx");
+                io.XlsReader.readXlsStudents("src/main/java/universityInfo.xlsx");
         StudentComparator studentComparator =
                 UnitedComparator.getStudentComparator(StudentsVariantsComparator.STUDENT_AVERAGE_MARK);
         students.sort(studentComparator);
