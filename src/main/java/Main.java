@@ -36,7 +36,7 @@ public class Main {
         logger.log(INFO, "Application started, Logger configured");
 
         List<University> universities =
-                XlsReader.readXlsUniversities("src/main/resources/universityInfo.xlsx");
+                XlsReader.readXlsUniversities("src/main/java/universityInfo.xlsx");
         UniversityComparator universityComparator =
                 UnitedComparator.getUniversityComparator(UniversityVariantsComparator.UNIVERSITY_YEAR_OF_FOUNDATION);
         universities.sort(universityComparator);
